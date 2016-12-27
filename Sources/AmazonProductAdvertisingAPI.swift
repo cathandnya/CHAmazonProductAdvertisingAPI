@@ -28,7 +28,7 @@ fileprivate func hmacSha256(string: String, key: String) -> String? {
     return String(hmacBase64)
 }
 
-class AmazonProductAdvertisingAPI {
+public class AmazonProductAdvertisingAPI {
     
     static let BASE_URL = "http://webservices.amazon.co.jp/onca/xml"
 
