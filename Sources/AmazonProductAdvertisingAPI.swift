@@ -93,19 +93,19 @@ public class AmazonProductAdvertisingAPI {
     var secretAccessKeyId: String
     var associateTag: String
     
-    init(accessKeyId: String, secretAccessKeyId: String, associateTag: String) {
+    public init(accessKeyId: String, secretAccessKeyId: String, associateTag: String) {
         self.accessKeyId = accessKeyId
         self.secretAccessKeyId = secretAccessKeyId
         self.associateTag = associateTag
     }
     
-    func send(queries: [String: String], completion: @escaping (XDocument?, Error?) -> Void) {
+    public func send(queries: [String: String], completion: @escaping (XDocument?, Error?) -> Void) {
         AmazonProductAdvertisingAPI.send(queries: queries, accessKeyId: accessKeyId, secretAccessKeyId: secretAccessKeyId, completion: completion)
     }
 
     // MARK:-
 
-    func lookUp(isbn: String, otherParams: [String: String], completion: @escaping ([XNode]?, Error?) -> Void) {
+    public func lookUp(isbn: String, otherParams: [String: String], completion: @escaping ([XNode]?, Error?) -> Void) {
         var params = otherParams
         params["Service"] = "AWSECommerceService";
         params["Operation"] = "ItemLookup";
